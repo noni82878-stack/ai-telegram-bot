@@ -9,7 +9,7 @@ class AIHandler:
     def __init__(self):
         # Используем OpenRouter API
         self.client = OpenAI(
-            api_key=OPENAI_API_KEY,  # ваш ключ sk-or-v1-...
+            api_key=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,  # ваш ключ sk-or-v1-...
             base_url="https://openrouter.ai/api/v1"  # OpenRouter endpoint
         )
         self.system_prompt = """
@@ -30,7 +30,7 @@ class AIHandler:
             messages.append({"role": "user", "content": user_message})
             
             response = self.client.chat.completions.create(
-                model="openai/gpt-3.5-turbo",  # Указываем модель через OpenRouter
+                model="google/gemma-7b-it:free",  # Указываем модель через OpenRouter
                 messages=messages,
                 max_tokens=150,
                 temperature=0.8
